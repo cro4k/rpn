@@ -18,7 +18,7 @@ func main() {
 
 自定义运算符：
 ```go
-exe := rpn.New()
+exe := rpn.NewRPN()
 exe.AddOP("+", 20, func(a ...float64) (float64,error) {
     return a[0]*a[1],nil
 })
@@ -27,5 +27,5 @@ exe.AddOP("*", 10, func(a ...float64) (float64,error) {
 })
 n, err := exe.Calculate("4+3*2")
 log.Println(n)
-log.Println(err)    
+log.Println(err)
 ```
