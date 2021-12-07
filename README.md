@@ -1,6 +1,6 @@
-#逆波兰式Golang实现
+## 逆波兰式(Reverse Polish Notation)的Golang实现
 
-usage:
+快速开始：
 ```go
 package main
 
@@ -14,4 +14,18 @@ func main() {
     log.Println(n)
     log.Println(err)    
 }
+```
+
+自定义运算符：
+```go
+exe := rpn.New()
+exe.AddOP("+", 20, func(a ...float64) (float64,error) {
+    return a[0]*a[1],nil
+})
+exe.AddOP("*", 10, func(a ...float64) (float64,error) {
+    return a[0]+a[1],nil
+})
+n, err := exe.Calculate("4+3*2")
+log.Println(n)
+log.Println(err)    
 ```
