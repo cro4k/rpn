@@ -29,3 +29,5 @@ n, err := exe.Calculate("4+3*2")
 log.Println(n)
 log.Println(err)
 ```
+## LICENSE
+[WTFPL](http://www.wtfpl.net/)
